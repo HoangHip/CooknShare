@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Asia-Food</title>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Kristi|Gugi" rel="stylesheet">
     <link rel="stylesheet" href="../static/css/test.css">
@@ -23,107 +23,85 @@
         <a class="main-menu-item" href="/logout">Logout</a>
     </div>
     <div class="bg-image">
-        <div style="width: 100%;max-height: 100%;padding-top: 6%">
-            <a href="#div-button-down">
-                <div class="container btn" style="width: 80%;left: 10%;max-height: 100px;margin: 0">
-                        <img src="../static/image/breakfast_kit8-net.png" style="max-height: 200px">
-                        <button class="btn active" onclick="filterSelection('all')" style="color:white ;text-shadow:2px 2px black;">Show all</button>
-                </div>
-            </a>
-            <a href="#div-button-down">                
-                <div class="container btn" style="position:absolute;width: 25%;height: 70%;left: 10%;">
-                        <img src="../static/image/toaster_and_toast_kit8-net.png" style="height: 100%">
-                        <button class="btn" onclick="filterSelection('breakfast')" style="color:white ;text-shadow:2px 2px black;">Breakfast</button>
-                    </div>
-            </a>
-            <a href="#div-button-down">                
-                <div class="container btn" style="width:25%; left:37.5%">
-                        <img src="../static/image/kitchen_pattern_2_kit8-net.png">
-                        <button class="btn" onclick="filterSelection('lunch')" style="color:white ;text-shadow:2px 2px black;">Lunch</button>
-                    </div>
-            </a>
-            <a href="#div-button-down">                
-                <div class="container btn" style="width:25%; left:37.5%;height: 180px">
-                        <img src="../static/image/equipment_fastfood_kit8-net.png">
-                        <button class="btn" onclick="filterSelection('dessert_drink')" style="color:white ;text-shadow:2px 2px black;">Dessert/Drink</button>
-                    </div>
-            </a>
-            <a href="#div-button-down">                
-                <div class="container btn" style="position :absolute; width:25%; left:65%; top:26.4%; height: 71%;">
-                        <img src="../static/image/food_kit8-net.png" style="height: 100%; padding-top : 3.4%;">
-                        <button class="btn" onclick="filterSelection('dinner')" style="color:white ;text-shadow:2px 2px black;">Dinner</button>
-                    </div>
-            </a>
+        <div class="container btn">
+            <button class="btn active" onclick="filterSelection('all')">Show all</button>
+        </div>
+        <div class="container btn">
+            <button class="btn" onclick="filterSelection('breakfast')">Breakfast</button>
+        </div>
+        <div class="container btn">
+            <button class="btn" onclick="filterSelection('lunch')" >Lunch</button>
+        </div>
+        <div class="container btn">
+            <button class="btn" onclick="filterSelection('snack')" >Dessert/Drink</button>
+        </div>
+        <div class="container btn">
+            <button class="btn" onclick="filterSelection('dinner')">Dinner</button>
         </div>
     </div>
-
+</div>
     <div id="div-button-down">
         <i id="button-down" class="fas fa-angle-down fa-2x"></i>
         <h1 style="margin: 0; margin-bottom : 17px;">RECIPES</h1>
     </div>
 
-    {% for food in foods %} 
-
-    {% if food.Type == "breakfast" %}
-    
-    <div class="container">
-        <div class="filterDiv breakfast">
-            <div id="bg-item">
-                <img id="img-odd-item" src="{{ food.Image }}">
-                <div id="describe-odd-item">
-                    <h2>{{ food.Name }}</h2>
-                    <h2>Description:</h2>
-                    <h6 style="margin:0;">{{ food.Description }}</h6>
+    <div class="home-view">
+        <div class="container">
+                {% for food in foods %} 
+                {% if food.Continent == "Asian" %}
+                {% if food.Type == "breakfast" %}
+                <div class="filterDiv breakfast">
+                    <div id="bg-item">
+                        <img id="img-odd-item" src="{{ food.Image }}">
+                        <div id="describe-odd-item">
+                            <h2>{{ food.Name }}</h2>
+                            <h2>Ingredients:</h2>
+                            <h6 style="margin:0;">{{ food.Description }}</h6>
+                        </div>
+                        <a id="details-button" href="/food/{{ food._id }}">More Details</a>
+                    </div>
                 </div>
-                <a id="details-button" href="/food/{{ food._id }}">More Details</a>
+                {% elif food.Type == "lunch" %}
+                <div class="filterDiv lunch">
+                        <div id="bg-item">
+                            <img id="img-odd-item" src="{{ food.Image }}">
+                            <div id="describe-odd-item">
+                                <h2>{{ food.Name }}</h2>
+                                <h2>Ingredients:</h2>
+                                <h6 style="margin:0;">{{ food.Description }}</h6>
+                            </div>
+                            <a id="details-button" href="/food/{{ food._id }}">More Details</a>
+                        </div>
+                    </div>
+                {% elif food.Type == "dinner" %}
+                <div class="filterDiv dinner">
+                        <div id="bg-item">
+                            <img id="img-odd-item" src="{{ food.Image }}">
+                            <div id="describe-odd-item">
+                                <h2>{{ food.Name }}</h2>
+                                <h2>Ingredients:</h2>
+                                <h6 style="margin:0;">{{ food.Description }}</h6>
+                            </div>
+                            <a id="details-button" href="/food/{{ food._id }}">More Details</a>
+                        </div>
+                    </div>
+                {% elif food.Type == "snack" %}
+                <div class="filterDiv snack">
+                        <div id="bg-item">
+                            <img id="img-odd-item" src="{{ food.Image }}">
+                            <div id="describe-odd-item">
+                                <h2>{{ food.Name }}</h2>
+                                <h2>Ingredients:</h2>
+                                <h6 style="margin:0;">{{ food.Description }}</h6>
+                            </div>
+                            <a id="details-button" href="/food/{{ food._id }}">More Details</a>
+                        </div>
+                    </div>
+                {% endif %}
+                
+                {% endif %} {% endfor %} 
             </div>
         </div>
-    </div>
-    {% elif food.Type == "lunch" %}
-    <div class="container">
-        <div class="filterDiv lunch">
-            <div id="bg-item">
-                <img id="img-odd-item" src="{{ food.Image }}">
-                <div id="describe-odd-item">
-                    <h2>{{ food.Name }}</h2>
-                    <h2>Description:</h2>
-                    <h6 style="margin:0;">{{ food.Description }}</h6>
-                </div>
-                <a id="details-button" href="/food/{{ food._id }}">More Details</a>
-            </div>
-        </div>
-    </div>
-    {% elif food.Type == "dinner" %}
-    <div class="container">
-        <div class="filterDiv dinner">
-            <div id="bg-item">
-                <img id="img-odd-item" src="{{ food.Image }}">
-                <div id="describe-odd-item">
-                    <h2>{{ food.Name }}</h2>
-                    <h2>Description:</h2>
-                    <h6 style="margin:0;">{{ food.Description }}</h6>
-                </div>
-                <a id="details-button" href="/food/{{ food._id }}">More Details</a>
-            </div>
-        </div>
-    </div>
-    {% elif food.Type == "snack" %}
-    <div class="container">
-        <div class="filterDiv dessert">
-            <div id="bg-item">
-                <img id="img-odd-item" src="{{ food.Image }}">
-                <div id="describe-odd-item">
-                    <h2>{{ food.Name }}</h2>
-                    <h2>Description:</h2>
-                    <h6 style="margin:0;">{{ food.Description }}</h6>
-                </div>
-                <a id="details-button" href="/food/{{ food._id }}">More Details</a>
-            </div>
-        </div>
-    </div>
-
-    {% endif %} 
-    {% endfor %}
     <script>
         filterSelection("all")
 

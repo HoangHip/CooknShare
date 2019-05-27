@@ -7,7 +7,7 @@ width: 80%
 body {
 display: flex;
 margin: 0;
-background-image: url('../image/videoblocks-two-fresh-raw-beef-steaks-with-herbs-garlic-rosemary-and-falling-pepper-salt-spices-on-black-table-top-view-closeup-professional-cooking-chef-nobody-food-styling-culinary-kitchen-uncooked-meat_hzegmsrysf_thumbnail-full01.png');
+background-image : url(../image/login.png);
 background-size: cover;
 justify-content: center;
 align-items: center;
