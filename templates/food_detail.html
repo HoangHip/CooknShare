@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Kristi|Gugi" rel="stylesheet">
+    <link rel="stylesheet" href="../static/css/food.css">
+</head>
+
+<body>
+    <div id="main-menu-text">
+        <a class="main-menu-item" href="/region" style="margin-right:5rem;">Home</a>
+        <form action="/search" method="POST">
+            <button id="header-search-icon" class="search-btn btn-default" type="submit"><i class="fa fa-search"></i>
+            </button>
+            <input name="search" style="display" class="search-bar" type="text" placeholder="Search something here">
+        </form>
+        <a class="main-menu-item" href="/login">{{ session.name }}</a>
+        <a class="main-menu-item" href="/logout">Logout</a>
+    </div>
+    <br><br>
+    <h1 class="heading" id="title">{{ food_detail.Name }}</h1>
+    <div class="detail-bg-text">
+        <img id="detail-bg" src="{{ food_detail.Image }}" width="400" height="400">
+        <div class="food-body">
+            <div class="food-process">
+                <div class="ingredients">
+                    <h1>Ingredients</h1>
+                    <ul>
+                        {% for a in food_detail.Ingredients %}
+                        <li>{{a}}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                <div class="preparation">
+                    <h1>Preparation</h1>
+                    <ul>
+                        {% for a in food_detail.Steps %}
+                        <li>{{a}}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div>
+            <form action="/add">
+                <input id="user-input" type="text" name="user_input" placeholder="Add another preparation">
+                <button>submit</button>
+            </form>
+        </div>
+        <!-- <h4 class="detail-recipes">RECIPES</h4>
+        <hr class="detail-recipes"> -->
+    </div>
+    
+</body>
+
+</html>

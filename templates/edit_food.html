@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Edit Food</title>
+</head>
+<body>
+    <form method="POST">
+        <input type="text" placeholder="Tiêu đề" name="title" value="{{ food.title }}"  required> <br> <br>
+    
+        <input type="text" placeholder="ingredients" name="description" required > <br> <br>
+   
+        <input type="text" placeholder="link" name="link" value="{{ food.link }}" required > <br> <br>
+        
+        <input type="text" placeholder="type" name="type" required> <br> <br>
+        <button>Xác nhận</button>
+    </form>
+</body>
+</html>

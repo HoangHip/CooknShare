@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Login</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    <link rel="stylesheet" href="../static/css/style.css">
+</head>
+<body>
+    <form id="login-form" action="/login" method = "POST">
+        <h1 id="h-sign-in">Sign In</h1>
+        <div class="div-input">
+         <i class="fas fa-user-tie custom-icon "></i>
+         <input class="login-input" type="text" placeholder="Username" name = "login_username" required> 
+        </div>
+        <div class="div-input">
+         <i class="fas fa-key custom-icon"></i>
+         <input class="login-input" type="password" placeholder="Password" name = "login_password" required> 
+        </div>
+        <div id="div-button">
+         <input class="btn-custom" type="submit" value = "Login">
+         <input class="btn-custom" type="reset" value = "Reset" >
+        </div>
+        <a class="new_account" href="/register">Or create an account </a><br>
+   
+</body>
+</html>

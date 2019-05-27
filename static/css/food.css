@@ -1,0 +1,95 @@
+@import url("https://fonts.googleapis.com/css?family=Amatic+SC:400,700");
+html,body {
+    height: 100%;
+    margin: 0;
+  font-family: 'Amatic SC', sans-serif;
+  background-image: url(../image/table.jpg);
+  background-size: cover;
+  background-attachment: fixed
+    
+}
+
+#main-menu-text {
+background-color: rgba(0,0,0, 0.4) ; /* Black w/opacity/see-through */
+color: white;
+font-weight: bold;
+border: 0px solid #f1f1f1;
+position: absolute;
+top: 0%;
+width: 94.5%;
+padding: 7px;
+display: flex;
+justify-content: flex-end;
+padding-right: 4.5rem;
+}
+.search-bar {
+        outline: none;
+        line-height: 1;
+        border: 0px solid #d6d6d7;
+        background-color: rgba(0,0,0, 0.4);
+        color: white;
+        height: 30px;
+        width: 200px;
+        border-radius: 2rem;
+        padding-left: 12%;
+        
+}
+.main-menu-item {
+margin-left : 2rem;
+margin-top: 0.4rem;
+}
+a {
+text-decoration: none;
+color : rgba(255 ,255 ,255 ,0.7);
+}
+#header-search-icon {
+position: absolute;
+border: none;
+background-color: rgba(0,0,0, 0.0);
+margin-top: 6px;
+margin-left: 2px;
+color: rgba(255 ,255 ,255 ,0.7);
+}
+
+.heading{
+        display: flex;
+        justify-content: center;
+}
+
+
+#title{
+        font-size: 500%;
+}
+.detail-bg-text{
+        display: flex;
+        flex-direction:row;
+        justify-content: center
+}
+#description{
+        margin-left: 100px
+}
+.food-body{
+        width:80%;
+        display: flex;
+        flex-direction: column;
+        background: rgba(255, 255, 255, 0.795);
+        justify-content: flex-start
+}
+.food-process{
+        margin-left: 50px;
+        display: flex;
+        justify-content: space-around;
+}
+.ingredients{
+        font-size: 30px;
+        width: 30%;
+        color: black;
+
+}
+.preparation{
+        font-size: 30px;
+        color: black;
+
+        width: 65%;
+}
+

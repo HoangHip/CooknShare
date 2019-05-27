@@ -1,0 +1,77 @@
+/* # là cho id , . là cho class, thẻ thường không cần */
+html,body {
+    height: 100%;
+    width: 80%
+}
+
+body {
+    display: flex;
+    margin: 0;
+    background-image: url(../image/login.png);
+    background-size: cover;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+#login-form {
+    display: flex;
+    background: rgba(252, 252, 253, 0.356);
+    width: 40%;
+    height: 40%;
+    display:flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: space-around;
+    border-radius: 1rem;
+}
+
+#login {
+    justify-content: end;
+}
+
+#h-sign-in {
+    width: 50%;
+    display:flex;
+    justify-content: flex-start;
+}
+.new_account {
+    width: 50%;
+    display: flex;
+    justify-content: flex-start;
+    color: black
+}
+.login-input {
+    width: 100%;
+    height: 2rem;
+    border-radius: 2rem;
+    border: none;
+    padding-left: 15%;
+    margin-left: -5%;
+}
+.div-input {
+    width: 50%;
+}
+.custom-icon {
+    position: absolute;
+    margin-top: 8px;
+}
+.btn-custom {
+    height: 2rem;
+    background-color: #4d3020;
+    border: none;
+    border-radius: 1rem;
+    width: 8rem;
+    cursor: pointer;
+}
+
+.btn-custom:hover {
+    color :  #fafafa;
+    background-color: slategray;
+    transition : 0.3s;
+}
+#div-button {
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+}

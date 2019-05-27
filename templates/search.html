@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Kristi|Gugi" rel="stylesheet">
+    <link rel="stylesheet" href="../static/css/search.css">
+</head>
+
+<body>
+    <div id="main-menu-text">
+        <form id="search" action="/search" method="POST">
+        <button id="header-search-icon" class="search-btn btn-default" type="submit"><i class="fa fa-search fa-4x"></i>
+        </button>
+        <input name="search" style="display" class="search-bar" type="text" placeholder="Search something here">
+        </form>
+    </div>
+    <div class="search-result">  
+        {% if foods == None %}
+        <h1>404 error</h1>
+        {% else %}
+        {% for food in foods %}
+        <div id="bg-item">
+            <h1 class="heading" id="title">{{ food.Name }}</h1>
+            <img id="detail-bg" src="{{ food.Image }}" width="400" height="400"><br>
+            <a id="details-button" href="/food/{{ food._id }}">More Details</a>
+        </div>
+        {% endfor %}
+        {% endif %}
+    </div>
+</body>
+</html>      
