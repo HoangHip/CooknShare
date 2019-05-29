@@ -9,26 +9,21 @@ html,body {
 
 * {
     box-sizing: border-box;
-  }
- 
-.home-view {
-    width: 100%;
-    display: flex;
-    flex-flow: row;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    padding-right: 20px
 }
 
+/* màu nền body */
 #bg-color {
     background-color: #070707; 
     /* background-color: khaki;  */
     height: 100%;
     margin: 0;
 }
+
+
+/* màu thanh bar ở giữa */
 .bg-image {
     background: #72706e;
-    height: 20%; 
+    height: 22%; 
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -36,13 +31,9 @@ html,body {
     display: flex;
     justify-content: center;
     align-items: center
-  }
-#logo {
-    font-size: 12px;
-    argin: 0;
-    margin-right: 46rem;
-    color: rgba(255, 255, 255, 0.562);
 }
+
+/* thanh bar trên cùng */
 #main-menu-text {
     background-color: rgba(0,0,0, 0.4) ; /* Black w/opacity/see-through */
     color: white;
@@ -56,26 +47,32 @@ html,body {
     justify-content: flex-end;
     padding-right: 4.5rem;
 }
+
+/* thanh search */
 .search-bar {
-        outline: none;
-        line-height: 1;
-        border: 0px solid #d6d6d7;
-        background-color: rgba(0,0,0, 0.4);
-        color: white;
-        height: 30px;
-        width: 200px;
-        border-radius: 2rem;
-        padding-left: 12%;
-        
-}
+    outline: none;
+    line-height: 1;
+    border: 0px solid #d6d6d7;
+    background-color: rgba(0,0,0, 0.4);
+    color: white;
+    height: 30px;
+    width: 200px;
+    border-radius: 2rem;
+    padding-left: 12%;
+    }
+/* phần login logout trên thanh bar top */
 .main-menu-item {
     margin-left : 2rem;
     margin-top: 0.4rem;
 }
+
+/* thẻ màu chữ login logout */
 a {
     text-decoration: none;
     color : rgb(255, 255, 255);
-}
+    }
+
+    /* logo kính lúp */
 #header-search-icon {
     position: absolute;
     border: none;
@@ -84,13 +81,18 @@ a {
     margin-left: 2px;
     color: rgba(255 ,255 ,255 ,0.7);
 }
-h2{
+
+
+h1,h2{
     font-size: 200%;
     color: whitesmoke;
 }
 h6{
+    color: whitesmoke;
     font-size:100%
 }
+
+/* nút mũi tên xuống */
 #div-button-down {
     margin: 0;
     display: flex;
@@ -99,35 +101,6 @@ h6{
     justify-content: space-around;
     align-items: center;
     height: 68px;
-}
-#bg-even-item {
-    display: flex;
-    height: 50%;
-}
-#img-even-item {
-    width: 50%;
-}
-#describe-even-item {
-    width: 100%;
-    display: flex;
-    flex-flow: column;
-    padding-left: 9rem;
-    padding-top: 2rem;
-}
-
-#bg-item {
-    display: flex;
-    flex-flow: row-reverse;
-    height: 100%;
-}
-#img-odd-item {
-    width: 50%;
-    padding-left: 20px
-}
-#describe-odd-item {
-    display: flex;
-    flex-flow: column;
-    width: 30%;
 }
 #button-down {
     height: 50px;
@@ -140,22 +113,7 @@ h6{
     color : #ffffffd0;
 }
 
-
-#test {
-  display: inline-block;
-  vertical-align: middle;
-  width: 100%;
-  outline: none;
-  text-align: center;
-  line-height: 1;
-  width: 50%;
-  font-size: 1000%;
-  color : rgba(255 ,255 ,255 ,0.9);
-}
-.time-service-icon {
-    position: absolute;
-    padding-bottom: 0.150%;
-}
+/* more detail */
 #details-button {
     border: 1px solid rgb(255, 255, 255);
     width: 132px;
@@ -165,23 +123,62 @@ h6{
     padding-left: 2px;
     margin-top:50px;
     margin-left:30px
-    
 }
 
-#detail-bg {
-  width: 100%;
+/* nút filter */
+.btn {
+    border: none;
+    outline: none;
+    padding: 6px 20px;
+    background-color: #f1f1f100;
+    cursor: pointer;
 }
-.detail-bg-text {
-    background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
-    color: white;
-    font-weight: bold;
-    top: 60%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 2;
-    height: 90%;
-    width: 90%;
+.container .btn {
+
+    background-color: rgba(85, 85, 85, 0.8);
+    color: rgb(255, 255, 255);
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-family: 'Amatic SC', sans-serif;
+
 }
+
+.btn :hover {
+    font-size: 200%;
+
+}
+
+#bg-item{
+    display:flex;
+    flex-flow:row;
+    justify-content: space-around;
+    width: 60%
+}
+
+
+.container-body {
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+    flex-wrap: wrap
+}
+
+.filterDiv{
+    width:50%;
+    padding-top:20px;
+    padding-left: 150px
+}
+
+#food-display{
+    display:flex;
+    flex-flow: column;
+    justify-content: space-around;
+    padding-left: 10px
+}
+
+/* trang region */
 #region-bg-img {
     height: 100%;
     width: 100%;
@@ -192,32 +189,6 @@ h6{
     display: flex;
     align-items: center;
 }
-.filterDiv {
-    float: left;
-    color: #ffffff;
-    text-align: center;
-    height: 400px;
-    display: none;
-}
-  
-.show {
-    display: block;
-}
-  
-.container {  
-    padding-top: 100px;
-    width: 50%;
-}
-  
-  /* Style the buttons */
-.btn {
-    border: none;
-    outline: none;
-    padding: 12px 16px;
-    background-color: #f1f1f100;
-    cursor: pointer;
-}
-  
 
 #region-name {
     position: absolute;
@@ -236,47 +207,4 @@ h6{
     font-size: 150%;
     text-shadow: 2px 2px white;
     color: black;
-}
-
-.container img {
-    width: 100%;
-}
-  
-.container .btn {
-
-    background-color: rgba(85, 85, 85, 0.8);
-    color: rgb(255, 255, 255);
-    font-size: 16px;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
-    font-family: 'Amatic SC', sans-serif;
-
-    /* flex-direction: row */
-}
-  
-.btn :hover {
-    font-size: 200%;
-
-}
-
-#filter-button {
-    flex-flow: wrap;
-}
-#home-bg-img {
-    width: 100%;
-    height: 100%;
-}
-#start-btn {
-    border: 1px solid rgba(219, 216, 216, 0.863);
-    width: 132px;
-    height: 47px;
-    font-size: 36px;
-    border-radius: 1rem;
-    padding-left: 2px;
-    position: absolute;
-    top:80%;
-    left:12%;
-    background-color: white;
-    color: #654321;
 }
