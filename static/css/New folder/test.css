@@ -193,7 +193,8 @@ h6{
     align-items: center;
 }
 .filterDiv {
-    float: left;
+    margin-bottom: 0.75rem;
+    width: 80%;
     color: #ffffff;
     text-align: center;
     height: 400px;
@@ -205,8 +206,10 @@ h6{
 }
   
 .container {  
+    display: flex;
+    flex-wrap: wrap;
     padding-top: 100px;
-    width: 50%;
+    width: 100%;
 }
   
   /* Style the buttons */
@@ -280,3 +283,4 @@ h6{
     background-color: white;
     color: #654321;
 }
+

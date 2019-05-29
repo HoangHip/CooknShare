@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Asia-Food</title>
+    <title>Europe Food</title>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Kristi|Gugi" rel="stylesheet">
     <link rel="stylesheet" href="../static/css/test.css">
@@ -48,7 +48,7 @@
     <div class="home-view">
         <div class="container">
                 {% for food in foods %} 
-                {% if food.Continent == "Asian" %}
+                {% if food.Continent == "European" %}
                 {% if food.Type == "breakfast" %}
                 <div class="filterDiv breakfast">
                     <div id="bg-item">
@@ -82,10 +82,12 @@
                 <div class="filterDiv dinner">
                         <div id="bg-item">
                             <img id="img-odd-item" src="{{ food.Image }}">
-                            <div id="describe-odd-item">
-                                <h2>{{ food.Name }}</h2>
-                                <h2>Ingredients:</h2>
-                                <h6 style="margin:0;">{{ food.Description }}</h6>
+                            <div id="food-display">
+                                <div id="describe-odd-item">
+                                    <h2>{{ food.Name }}</h2>
+                                    <h2>Ingredients:</h2>
+                                    <h6 style="margin:0;">{{ food.Description }}</h6>
+                                </div>
                             </div>
                             <a id="details-button" href="/food/{{ food._id }}">More Details</a>
                         </div>
@@ -94,10 +96,12 @@
                 <div class="filterDiv snack">
                         <div id="bg-item">
                             <img id="img-odd-item" src="{{ food.Image }}">
-                            <div id="describe-odd-item">
-                                <h2>{{ food.Name }}</h2>
-                                <h2>Ingredients:</h2>
-                                <h6 style="margin:0;">{{ food.Description }}</h6>
+                            <div id="food-display">
+                                <div id="describe-odd-item">
+                                    <h2>{{ food.Name }}</h2>
+                                    <h2>Ingredients:</h2>
+                                    <h6 style="margin:0;">{{ food.Description }}</h6>
+                                </div>
                             </div>
                             <a id="details-button" href="/food/{{ food._id }}">More Details</a>
                         </div>

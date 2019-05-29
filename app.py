@@ -5,7 +5,7 @@ app = Flask(__name__)
 
 app.config['SECRET_KEY'] = '1$^f3DGDFEAK$#%@afkdfe'
 
-@app.route('/home')
+@app.route('/')
 def home():
     return render_template('wellcome.html')
 @app.route('/region')
@@ -18,20 +18,51 @@ def index():
     else:
         return redirect('/login')            
 @app.route('/asia/food')
-def food():
+def aisa_food():
     foods = Foods.find()
-    return render_template('foods.html', foods = foods )
+    return render_template('asia_foods.html', foods = foods )
 
-@app.route('/food/<id>')
+@app.route('/america/food')
+def america_food():
+    foods = Foods.find()
+    return render_template('america_foods.html', foods = foods )
+
+@app.route('/africa/food')
+def afirca_food():
+    foods = Foods.find()
+    return render_template('africa_foods.html', foods = foods )
+
+@app.route('/europe/food')
+def europe_food():
+    foods = Foods.find()
+    return render_template('europe_foods.html', foods = foods )
+
+@app.route('/australia/food')
+def australia_food():
+    foods = Foods.find()
+    return render_template('australia_foods.html', foods = foods )
+
+@app.route('/food/<id>', methods =['GET', 'POST'])
 def detail(id):
     food_detail = Foods.find_one({"_id": ObjectId(id)})
-    return render_template('food_detail.html', food_detail = food_detail)
+    if request.method == 'GET':
+        return render_template('food_detail.html', food_detail = food_detail)
+    elif request.method == 'POST':
+        if session['logged'] == False:
+            return render_template('login.html')
+        elif session['logged'] == True:
+            form = request.form
+            new_review = {
+                session['username'] : form['review'],
+            }
+            food_detail['review'] = new_review
+            return render_template('food_detail.html', food_detail = food_detail)
 
 @app.route('/login', methods = ['GET', 'POST'])
 def login():
     if 'logged' in session :
         if session['logged']:
-            return redirect('/home')
+            return redirect('/')
         else:
             if request.method == 'GET':
                 return render_template('login.html')
@@ -60,6 +91,7 @@ def logout():
     if 'logged' in session:
         session['logged'] = False
     return redirect('/login')
+
 @app.route('/register', methods=['GET', 'POST'])
 def register():
     if request.method == 'GET':
@@ -88,14 +120,12 @@ def search():
                 foods = Foods.find({'Name':{'$regex' : search, "$options":'i'}})        
             elif search in food['Description']:
                 foods = Foods.find({'Description':{'$regex' :  search, "$options":'i'}})
-            # elif search in food['Type']:
-                # foods = Foods.find({'Type':{'$regex' :  search}})
+            elif search in food['Type']:
+                foods = Foods.find({'Type':{'$regex' :  search}})
             elif search in food['Continent']:
                 foods = Foods.find({'Continent':{'$regex' : search, "$options":'i'}})
             elif search in food['Ingredients']:
                 foods = Foods.find({'Ingredients':{'$regex' : search, "$options":'i'}})
-        #     # elif search in food['Steps']:
-        #         # foods = Foods.find({'step':{'$regex' : search}})
             else :
                 foods = None                        
         return render_template('search.html', foods= foods)
