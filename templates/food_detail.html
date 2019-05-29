@@ -46,14 +46,19 @@
                 </div>
             </div>
         </div>
-        <div>
-            <form action="/add">
-                <input id="user-input" type="text" name="user_input" placeholder="Add another preparation">
+        <h3 class="review">
+            <form method="POST">
+                <input type="text" placeholder="write your review" name="review" > <br> <br>
+            
                 <button>submit</button>
-            </form>
-        </div>
-        <!-- <h4 class="detail-recipes">RECIPES</h4>
-        <hr class="detail-recipes"> -->
+        </h3><br><br>
+        <h4 class = "review display">
+            {% for review in food_detail.review %}
+                            <li>
+                                {{ review }}
+                            </li>
+                            {% endfor %}
+        </h4>
     </div>
     
 </body>
