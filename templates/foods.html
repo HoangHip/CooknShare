@@ -53,10 +53,13 @@
                 <div class="filterDiv breakfast">
                     <div id="bg-item">
                         <img id="img-odd-item" src="{{ food.Image }}">
-                        <div id="describe-odd-item">
-                            <h2>{{ food.Name }}</h2>
-                            <h2>Ingredients:</h2>
-                            <h6 style="margin:0;">{{ food.Description }}</h6>
+                        <div id="food-display">
+                            
+                            <div id="describe-odd-item">
+                                <h2>{{ food.Name }}</h2>
+                                <h2>Ingredients:</h2>
+                                <h6 style="margin:0;">{{ food.Description }}</h6>
+                            </div>
                         </div>
                         <a id="details-button" href="/food/{{ food._id }}">More Details</a>
                     </div>
@@ -65,10 +68,12 @@
                 <div class="filterDiv lunch">
                         <div id="bg-item">
                             <img id="img-odd-item" src="{{ food.Image }}">
-                            <div id="describe-odd-item">
-                                <h2>{{ food.Name }}</h2>
-                                <h2>Ingredients:</h2>
-                                <h6 style="margin:0;">{{ food.Description }}</h6>
+                            <div id="food-display">
+                                <div id="describe-odd-item">
+                                    <h2>{{ food.Name }}</h2>
+                                    <h2>Ingredients:</h2>
+                                    <h6 style="margin:0;">{{ food.Description }}</h6>
+                                </div>
                             </div>
                             <a id="details-button" href="/food/{{ food._id }}">More Details</a>
                         </div>
